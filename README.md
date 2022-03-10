@@ -4,7 +4,7 @@ JA19227_WGS:
 WGS dataset of G2L4 WT and KOs
 
 JA20095
-
+DNA-seq of PCR products in snap-bakc experiments
 
 MDA-1112
 TGIRT-seq, RNA-seq of ribodepleted fragmented RNA from G2L4 WT and KO, log phase or stationary phase, 4 replicates each

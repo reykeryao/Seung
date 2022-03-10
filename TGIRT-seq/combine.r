@@ -1,0 +1,17 @@
+dat<-read.delim(gzfile("AZPAE12409.info.gz"), header=F, col.names=c("ID","Name_AZ","Type_AZ","Info_AZ","Over_AZ")) 
+dat1<-read.delim(gzfile("PAO1.info.gz"), header=F, col.names=c("ID","Name_PAO","Type_PAO","Info_PAO","Over_PAO"))
+dat2<-merge(dat, dat1, by="ID", all=T)
+len<-sum(complete.cases(dat2))
+dat2[is.na(dat2)]<-"."
+write.table(dat2, "info.comm", sep="\t", quote=F, row.names=F)
+
+sink("reAnno.info")
+cat("AZPAE12409\t",length(dat$ID))
+cat("\n")
+cat("PAO1\t",length(dat1$ID))
+cat("\n")
+cat("Common\t",len)
+cat("\n")
+cat("Combined\t",length(dat2$ID))
+cat("\n")
+sink()
